@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: Utilities over rest
+  description: |-
+    Various small utilities restfully hosted
+  termsOfService: https://www.gnu.org/licenses/gpl-3.0.en.html
+  license:
+    name: GPL-3.0
+    url: https://www.gnu.org/licenses/gpl-3.0.en.html
+  version: 0.0.1-alpha
+externalDocs:
+  description: Github
+  url: https://github.com/pieterdb4477/util-over-rest
+#servers:
+#  - url: https://petstore3.swagger.io/api/v3
+paths:
+  /timeSince/{date}:
+    get:
+      summary: Gets the time from now up to a given period
+      operationId: timeSince
+      parameters:
+        - name: date
+          in: path
+          description: A given point in time before today
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: A valid response could be generated
+          content:
+            text/plain:
+              schema:
+                type: string

@@ -1,0 +1,8 @@
+GET http://localhost:8080/timeSince/2017-07-21T17:32:28Z
+
+> {%
+    client.test("Body contains some text", function () {
+        client.assert(response.body !== "", "Response body is empty");
+        client.assert(response.body !== null, "Response body is null");
+    });
+%}
